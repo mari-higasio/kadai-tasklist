@@ -2,8 +2,9 @@
 
 @section('content')
 
-   <h1>id ={{$task->id}}のタスク</h1>
-   <p>{{$task->content}}</p>
+   <h1>id ={{$task->id}}のタスク詳細</h1>
+   <p>ステータス：{{$task->status}}</p>
+   <p>タスク：{{$task->content}}</p>
    
    {!! link_to_route('tasks.edit','このタスク編集',[ 'id' => $task->id])!!}
    {!! Form::model($task,['route'=>['tasks.destroy',$task->id],'method'=>'delete'])!!}
